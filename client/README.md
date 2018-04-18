@@ -1,1 +1,0 @@
-# Shopper README
