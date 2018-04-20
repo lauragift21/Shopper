@@ -1,10 +1,12 @@
 {
   "name": "shopper",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project for buying shirts online made with Vue and Sailsjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-all": "cd client && npm install & cd server && npm install",
+    "dev": "cd server && npm run dev & cd client && npm run dev"
   },
   "keywords": [
     "shopping",
