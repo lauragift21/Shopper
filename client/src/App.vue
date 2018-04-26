@@ -1,8 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-    </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+</script>
+
+
+<style>
+#app {
+  font-family: 'Ubuntu';
+  font-weight: 300;
+}
+</style>
 
