@@ -5,15 +5,18 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "sails": "^1.0.1",
-    "grunt": "1.0.1",
-    "sails-hook-grunt": "^3.0.2",
-    "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.4.0",
     "@sailshq/connect-redis": "^3.2.1",
-    "@sailshq/socket.io-redis": "^5.2.0",
     "@sailshq/lodash": "^3.10.3",
-    "async": "2.0.1"
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "async": "2.0.1",
+    "bcrypt-nodejs": "0.0.3",
+    "grunt": "1.0.1",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
+    "sails": "1.0.2",
+    "sails-hook-grunt": "^3.0.2",
+    "sails-hook-orm": "2.0.1",
+    "sails-hook-sockets": "^1.4.0"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3"
@@ -22,8 +25,7 @@
     "dev": "node app.js",
     "start": "NODE_ENV=production node app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
-    "lint":
-      "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
   },
   "main": "app.js",
