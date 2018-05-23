@@ -14,5 +14,6 @@
     "vue"
   ],
   "author": "Egwuenu Gift <laurandidi21@gmail.com> (https://giftegwuenu.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }

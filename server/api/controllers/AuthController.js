@@ -19,6 +19,7 @@ module.exports = {
         if(err) res.send(err);
         sails.log('User '+user.id+' has logged in.');
 
+      // TODO: Add response object to postman
       })
     })(req, res);
   },
@@ -40,12 +41,15 @@ module.exports = {
     }
 
     User.create(data).fetch().exec(function(err, user){
-      if(err) return console.log(user);
+      if(err) return res.negotiate(user);
 
       req.login(user, function(err){
-        if(err) return console.log(user);
-        sails.log('User '+user.id+' has logged in.');
+        if(err) return res.negotiate(user);
+        sails.log('User '+user.id+' has been registered successfully.');
+        // return res.send([statusCode, ], data);
         return res.redirect('/');
+      // TODO: Add response object to postman
+
       })
     })
   }

@@ -17,6 +17,9 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
-
+  '*': 'authenticated',
+  // whitelist the auth controller
+	'auth': {
+		'*': true
+	}
 };

@@ -20,6 +20,14 @@ module.exports.session = {
   ***************************************************************************/
   secret: 'e420c8800f1e2964b27ebecfb31b6065',
 
+  adapter: 'connect-mongo',
+	// Note: user, pass and port are optional
+  url: 'mongodb://lauragift21:ndudi222@ds231740.mlab.com:31740/shopper',
+	collection: 'sessions',
+	auto_reconnect: false,
+	ssl: false,
+	stringify: true
+
 
   /***************************************************************************
   *                                                                          *

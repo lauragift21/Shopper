@@ -29,16 +29,18 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // order: [
-    //   'cookieParser',
-    //   'session',
-    //   'bodyParser',
-    //   'compress',
-    //   'poweredBy',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    // ],
+    order: [
+      'cookieParser',
+      'session',
+      'passportInit',
+      'passportSession',
+      'bodyParser',
+      'compress',
+      'poweredBy',
+      'router',
+      'www',
+      'favicon',
+    ],
 
 
     /***************************************************************************
@@ -55,6 +57,13 @@ module.exports.http = {
     //   return middlewareFn;
     // })(),
 
+    passportInit: (function (){
+      return require('passport').initialize();
+    })(),
+
+    passportSession: (function (){
+      return require('passport').session();
+    })()
   },
 
 };
