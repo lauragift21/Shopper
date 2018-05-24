@@ -18,8 +18,7 @@ module.exports = {
       req.login(user, function(err){
         if(err) res.send(err);
         sails.log('User '+user.id+' has logged in.');
-
-      // TODO: Add response object to postman
+        return res.json([200],{ message: 'User Login Successful'});
       })
     })(req, res);
   },
@@ -27,11 +26,13 @@ module.exports = {
   // logout function
   logout: function(req, res){
     req.logout();
+    sails.log('User '+user.id+' has logged out.');
     res.redirect('/');
   },
 
   // register function
   register: function(req, res){
+
     // TODO: add form validation
 
     data = {
@@ -41,15 +42,13 @@ module.exports = {
     }
 
     User.create(data).fetch().exec(function(err, user){
-      if(err) return res.negotiate(user);
+      if(err) return res.send(user);
 
       req.login(user, function(err){
-        if(err) return res.negotiate(user);
+        if(err) return res.send(user);
         sails.log('User '+user.id+' has been registered successfully.');
-        // return res.send([statusCode, ], data);
-        return res.redirect('/');
-      // TODO: Add response object to postman
-
+        return res.status([200]).json({ message: 'New User Registration Successful'});
+        // return res.redirect('/');
       })
     })
   }
