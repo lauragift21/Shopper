@@ -45,8 +45,8 @@ module.exports.routes = {
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
 
-  'POST /login': 'AuthController.login',
-  'POST /register': 'AuthController.register',
+  'post /login': 'AuthController.login',
+  'post /register': 'AuthController.register',
   '/logout': 'AuthController.logout',
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗

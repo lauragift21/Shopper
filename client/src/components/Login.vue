@@ -1,67 +1,103 @@
 <template>
   <div class="login">
-    <b-form @submit="onSubmit">
-      <b-form-group id="email"
-				label="Email address:"
-				label-for="email"
-				description="We'll never share your email with anyone else.">
-        <b-form-input id="email"
-					type="email"
-					v-model="form.email"
-					required
-					placeholder="Enter email">
-        </b-form-input>
-      </b-form-group>
-      <b-form-group id="password"
-				label="Password:"
-				label-for="password">
-        <b-form-input id="password"
-					type="password"
-					v-model="form.password"
-					required
-					placeholder="Enter password">
-        </b-form-input>
-      </b-form-group>
-      <b-button type="submit" variant="dark">Submit</b-button>
-      <!-- <b-button type="reset" variant="danger">Reset</b-button> -->
-    </b-form>
+    <h2 class="text-center text-info">Log In</h2>
+     <form method="post" @submit.prevent="loginUser">
+      <!-- <div class="alert alert-success alert-dismissible fade show" v-if="success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <b>Login successful!</b>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show" v-if="error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <b>Login Failed! Please Provide correct credentials</b>
+      </div> -->
+      <div class="form-group">
+        <label for="Username"> Username: </label>
+        <input
+          type="text"
+          v-model="username"
+          name="username"
+          required
+          class="form-control"
+          autocomplete="foo"
+          placeholder="Enter username"
+          v-validate="'required'">
+          <span v-if="errors.has('username')" class="text-danger">
+            {{ errors.first('username') }}
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="email"> Your Email: </label>
+        <input
+          type="email"
+          autocomplete="on"
+          class="form-control"
+          v-model="email"
+          id="email"
+          name="email"
+          required
+          v-validate="'required|email'"
+          placeholder="Enter email address">
+          <span
+            v-show="errors.has('email')"
+            class="text-danger">
+              {{ errors.first('email') }}
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          v-model="password"
+          required
+          autocomplete= "foo"
+          placeholder="Enter password"
+          v-validate="'max:10'">
+          <span v-if="errors.has('password')" class="text-danger">
+            {{ errors.first('password') }}
+          </span>
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      form: {
-        email: '',
-        password: ''
-      }
+      username: '',
+      email: '',
+      password: '',
+      success: false,
+      error: false
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      /* Reset our form values */
-      this.form.email = '';
-      this.form.password = '';
-      /* Trick to reset/clear native browser form validation state */
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
+    loginUser() {
+      const url = 'http://localhost:1337/login';
+      axios.post(url, {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }).then(res => {
+        console.log(res);
+        this.success = true;
+        this.$router.replace(this.$route.query.redirect || '/products');
+      }).catch(err => {
+        this.error = true;
+        console.log(err);
       });
     }
-  }
+  },
 };
 </script>
+
 <style scoped>
 .login {
-  margin-top: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 6vw 24vw;
 }
 </style>

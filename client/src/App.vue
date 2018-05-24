@@ -1,32 +1,51 @@
 <template>
   <div id="app">
- <b-navbar toggleable="md" type="dark" variant="info">
-    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-    <b-navbar-brand href="/">
-        <img src="./assets/logo.png" alt="logo" width="100px">
-      </b-navbar-brand>
-    <b-collapse is-nav id="nav_collapse">
-      <b-navbar-nav>
-        <b-nav-item href="#">Manage Product</b-nav-item>
-      </b-navbar-nav>
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-      <!-- Search and language to be iterated later -->
-        <!-- <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-        </b-nav-form> -->
-        <b-navbar-nav>
-          <router-link to="/login">
-            <b-nav-item href="/login">Login </b-nav-item>
-          </router-link>
-          <router-link to="/register">
-            <b-nav-item href="/register">Sign Up</b-nav-item>
-          </router-link>
-        </b-navbar-nav>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+    <div class="bar">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-info">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/logo.png" alt="logo" height="40px">
+      </a>
+        <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarTogglerDemo02" class="navbar-collapse collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" v-if="false">Manage Products</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#" v-if="false">
+               Cart
+               <img src="./assets/cart.png" width="20px" alt="cart">
+              </a>
+            </li>
+            <li class="nav-item">
+              <router-link to="/login"
+                class="nav-link">
+                Login
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/register"
+                class="nav-link">
+                Sign Up
+              </router-link>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    </div>
   <router-view/>
   </div>
 </template>

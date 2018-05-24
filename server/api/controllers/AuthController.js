@@ -33,8 +33,6 @@ module.exports = {
   // register function
   register: function(req, res){
 
-    // TODO: add form validation
-
     data = {
       username: req.body.username,
       email: req.body.email,
@@ -43,7 +41,6 @@ module.exports = {
 
     User.create(data).fetch().exec(function(err, user){
       if(err) return res.send(user);
-
       req.login(user, function(err){
         if(err) return res.send(user);
         sails.log('User '+user.id+' has been registered successfully.');
@@ -52,7 +49,5 @@ module.exports = {
       })
     })
   }
-
-
 };
 
