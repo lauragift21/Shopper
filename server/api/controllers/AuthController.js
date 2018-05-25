@@ -1,5 +1,6 @@
 /**
  * AuthController
+ * Ability to register and SignIn users
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -18,7 +19,7 @@ module.exports = {
       req.login(user, function(err){
         if(err) res.send(err);
         sails.log('User '+user.id+' has logged in.');
-        return res.json([200],{ message: 'User Login Successful'});
+        return res.json([200],{ message: 'User Login Successful', data});
       })
     })(req, res);
   },
