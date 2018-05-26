@@ -31,7 +31,7 @@ module.exports = {
 
   customToJSON: function() {
     // Return a shallow copy of this record with the password removed.
-    return __.omit(this, ['password'])
+    return _.omit(this, ['password'])
   },
 
   // hash password with bcrypt

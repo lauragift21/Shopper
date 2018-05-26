@@ -17,12 +17,11 @@ module.exports = function(req, res, next) {
     }
 
     // If you are using a traditional, server-generated UI then uncomment out this code:
-    res.redirect('/explore');
+    // res.redirect('/explore');
 
     // If you are using a single-page client-side architecture and will login via socket or Ajax, then uncomment out this code:
-    /*
-      res.status(401);
-      res.end();
-      */
+    res.status(401);
+    res.end();
+
   }
 };
