@@ -85,12 +85,11 @@ export default {
         email: this.email,
         password: this.password
       }).then(res => {
-        console.log(res.config.data);
-        localStorage.token = res.config.data.email;
         this.success = true;
+        localStorage.token = res.config.data.email;
+        this.$router.replace(this.$route.query.redirect || '/shop');
         // passing event with $emit
         EventBus.$emit('logged', 'user logged');
-        this.$router.replace(this.$route.query.redirect || '/shop');
       }).catch(err => {
         this.error = true;
         console.log(err);

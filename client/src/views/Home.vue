@@ -3,10 +3,10 @@
     <!-- header -->
     <div class="jumbotron text-center">
       <b class="display-3">Shopper</b>
-      <p class="lead"> Thrift shop for fashion items at discounted prices.</p>
-      <button class="btn btn-dark">
-        <a class="text-white" href="#/login">Start Shopping</a>
-      </button>
+      <p class="lead"> Thrift shop for everything on the internet at discounted prices</p>
+      <a href="#/login"><button class="btn btn-dark">
+        Start Shopping
+      </button></a>
     </div>
     <!-- cards -->
     <section id="about">
@@ -67,7 +67,7 @@
   margin-top: 20px;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 .card-columns {
     margin: 10px;

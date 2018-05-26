@@ -2,42 +2,42 @@
   {
     "id": "1",
     "name": "Micheal Kors Bag",
-    "Description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
     "price": "$45.00",
     "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "2",
     "name": "Micheal Kors Bag",
-    "Description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
     "price": "$45.00",
     "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "3",
     "name": "Micheal Kors Bag",
-    "Description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
     "price": "$45.00",
     "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "4",
     "name": "Micheal Kors Bag",
-    "Description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
     "price": "$45.00",
     "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "5",
     "name": "Micheal Kors Bag",
-    "Description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
     "price": "$45.00",
     "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "6",
     "name": "Micheal Kors Bag",
-    "Description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
     "price": "$45.00",
     "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   }

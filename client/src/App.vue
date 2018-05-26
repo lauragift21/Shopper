@@ -20,26 +20,35 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" v-if="false">Manage Products</a>
+              <a class="nav-link" href="#/shop" v-if="false">Manage Products</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#" v-if="false">
-               Cart
+            <li class="nav-item active">
+              <button class="nav-link btn bg-white" href="#" v-if="false">
+               <a class="text-dark"> Cart </a>
                <img src="./assets/cart.png" width="20px" alt="cart">
-              </a>
+              </button>
             </li>
             <li class="nav-item">
               <router-link to="/login"
-                class="nav-link">
+                class="nav-link"
+                v-if="true">
                 Login
               </router-link>
             </li>
             <li class="nav-item">
+              <router-link to="/login"
+                class="nav-link"
+                v-if="false">
+                Logout
+              </router-link>
+            </li>
+            <li class="nav-item">
               <router-link to="/register"
-                class="nav-link">
-                Sign Up
+                class="nav-link"
+                v-if="true">
+               Sign Up
               </router-link>
             </li>
           </ul>
@@ -53,13 +62,35 @@
 <script>
 import Login from '@/components/Login.vue';
 import SignUp from '@/components/SignUp.vue';
+import EventBus from './event-bus';
 
 export default {
   name: 'home',
   components: {
     Login,
     SignUp
-  }
+  },
+  // created() {
+  //   if (isAuthenticated) {
+  //     this.authenticated = true;
+  //   } else {
+  //     this.authenticated = false;
+  //   }
+  // },
+  // created() {
+  //   EventBus.$on('logged', () => {
+  //     this.isLogged = this.isAuthenticated();
+  //   });
+  // },
+  // methods: {
+  //   isAuthenticated() {
+  //     const token = localStorage.getItem('token');
+  //     if (token) {
+  //       return true
+  //     }
+  //     return false;
+  //   }
+  // }
 };
 </script>
 

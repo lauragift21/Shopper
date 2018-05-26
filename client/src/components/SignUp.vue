@@ -25,7 +25,7 @@
         <label for="email"> Your Email </label>
         <input
           type="email"
-          autocomplete="foo"
+          autocomplete="on"
           class="form-control"
           v-model="email"
           id="email"
