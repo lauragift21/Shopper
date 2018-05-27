@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     signInUser() {
-      const url = 'http://localhost:1337/register';
+      const url = 'http://localhost:1337/api/v1/register';
       axios
         .post(url, {
           username: this.username,

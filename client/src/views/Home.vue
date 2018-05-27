@@ -3,7 +3,7 @@
     <!-- header -->
     <div class="jumbotron text-center">
       <b class="display-3">Shopper</b>
-      <p class="lead"> Thrift shop for everything on the internet at discounted prices</p>
+      <p class="lead"> Thrift shop for every fashion items on the internet at discounted prices</p>
       <a href="#/login"><button class="btn btn-dark">
         Start Shopping
       </button></a>

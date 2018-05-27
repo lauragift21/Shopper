@@ -65,7 +65,7 @@
 
 <script>
 import axios from 'axios';
-import EventBus from '../event-bus';
+import EventBus from '../store/event-bus';
 
 export default {
   data() {
@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     loginUser() {
-      const url = 'http://localhost:1337/login';
+      const url = 'http://localhost:1337/api/v1/login';
       axios
         .post(url, {
           username: this.username,
