@@ -2,43 +2,67 @@
   {
     "id": "1",
     "name": "Micheal Kors Bag",
-    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": "$45.00",
-    "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
+    "description":
+      "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "price": 45.0,
+    "quantity": 1,
+    "sku": 1,
+    "image":
+      "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "2",
-    "name": "Micheal Kors Bag",
-    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": "$45.00",
-    "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
+    "name": "Jimmy Choo",
+    "description":
+      "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "price": 15.0,
+    "quantity": 1,
+    "sku": 2,
+    "image":
+      "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "3",
-    "name": "Micheal Kors Bag",
-    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": "$45.00",
-    "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
+    "name": "Chanel Bag",
+    "description":
+      "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "price": 10.0,
+    "quantity": 1,
+    "sku": 3,
+    "image":
+      "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "4",
     "name": "Micheal Kors Bag",
-    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": "$45.00",
-    "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
+    "description":
+      "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "price": 200.0,
+    "quantity": 1,
+    "sku": 4,
+    "image":
+      "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "5",
     "name": "Micheal Kors Bag",
-    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": "$45.00",
-    "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
+    "description":
+      "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "price": 465.0,
+    "quantity": 1,
+    "sku": 5,
+    "image":
+      "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "6",
     "name": "Micheal Kors Bag",
-    "description": "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": "$45.00",
-    "image": "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
+    "description":
+      "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
+    "price": 145.0,
+    "quantity": 1,
+    "sku": 6,
+    "image":
+      "http://res.cloudinary.com/lauragift/image/upload/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   }
 ]

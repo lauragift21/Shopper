@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center mt-5">SHOPPER</h1>
+    <h1 class="text-center mt-3">Our Products</h1>
     <div class="card-columns m-5">
       <div class="card p-3" v-for="product in products" :key="product.id">
           <div class="card-img-top">

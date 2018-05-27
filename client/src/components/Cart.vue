@@ -31,7 +31,11 @@
         <checkout/>
       </div>
     </div>
-    <div v-else class="text-center display-4"><i class="fa fa-warning"> </i> Your Cart is Empty!</div>
+    <div v-else class="text-center badge-danger">
+      <i class="fa fa-warning"></i>
+        Your Cart is Empty! <br>
+        Fill her up!
+    </div>
   </div>
 </template>
 

@@ -25,12 +25,12 @@
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                  <!-- TODO: CART TOTAL Indicator -->
               <a class="text-dark" href="#/cart">
-                <button class="nav-link btn bg-white mx-1  pr-3" href="#" v-if="isAuthenticated()">
+                <button class="nav-link btn bg-white mx-1 pr-3" v-if="isAuthenticated()">
                   <div class="text-dark">
                     Cart
                       <img src="./assets/cart.png" width="20px" alt="cart">
+                      ({{cart()}})
                   </div>
                 </button>
               </a>
@@ -69,6 +69,7 @@
 import Login from '@/components/Login.vue';
 import SignUp from '@/components/SignUp.vue';
 import EventBus from './store/event-bus';
+import { Store } from './store/store';
 
 export default {
   name: 'home',
@@ -78,7 +79,8 @@ export default {
   },
   data() {
     return {
-      isLogged: this.isAuthenticated()
+      isLogged: this.isAuthenticated(),
+      product: Store.$data.cart
     };
   },
   created() {
@@ -105,6 +107,9 @@ export default {
         return true;
       }
       return false;
+    },
+    cart() {
+      return Store.$data.cart.length;
     }
   }
 };

@@ -13,17 +13,33 @@
       <div class="card-columns">
         <div class="card">
           <div class="card-body">
-            <img src="http://res.cloudinary.com/lauragift/image/upload/c_scale,h_194,w_396/v1527371027/100_4494_trhsnb.jpg" alt="bag">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Adipisci molestiae alias laborum eligendi
+              necessitatibus tempora culpa at fuga quas libero? Animi vel a
+              ccusantium quos iste, quia exercitationem t
+              enetur fuga laudantium!
+            </p>
           </div>
         </div>
         <div class="card">
           <div class="card-body d-flex justify-content-center">
-            <img src="http://res.cloudinary.com/lauragift/image/upload/c_scale,h_176,w_181/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg" alt="kors">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
+              officia ducimus facilis libero eius, alias
+              consequatur quas saepe quisquam fuga tenetur obcaecati impedit
+               rerum labore distinctio. Soluta natus laborum perferendis.
+            </p>
           </div>
         </div>
         <div class="card">
           <div class="card-body d-flex justify-content-center">
-            <img src="http://res.cloudinary.com/lauragift/image/upload/c_scale,h_191,w_344/v1527371012/thrift-store-secrets-12_dfaii3.jpg" alt="store">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+               Non, natus. Eligendi ad, ex magni pra
+              aliquid placeat nostrum exercitationem, ab modi nobis aliquam perferend
+              is eveniet, reprehenderit earum consequatur at. Maxime!
+            </p>
           </div>
         </div>
       </div>
