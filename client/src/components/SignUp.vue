@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   name: 'Register',
@@ -73,18 +73,21 @@ export default {
     };
   },
   methods: {
-    signInUser(){
+    signInUser() {
       const url = 'http://localhost:1337/register';
-      axios.post(url, {
-        username: this.username,
-        email: this.email,
-        password: this.password,
-      }).then(res => {
-      this.success = true;
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
+      axios
+        .post(url, {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        })
+        .then(res => {
+          this.success = true;
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
@@ -92,6 +95,6 @@ export default {
 
 <style scoped>
 .register {
-   margin: 6vw 24vw;
+  margin: 6vw 24vw;
 }
 </style>

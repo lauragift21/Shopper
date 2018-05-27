@@ -20,12 +20,12 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#/shop" v-if="false">Manage Products</a>
+              <a class="nav-link" href="#/shop" v-if="isAuthenticated()">Manage Products</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <button class="nav-link btn bg-white" href="#" v-if="false">
+              <button class="nav-link btn bg-white" href="#" v-if="isAuthenticated()">
                <a class="text-dark"> Cart </a>
                <img src="./assets/cart.png" width="20px" alt="cart">
               </button>
@@ -33,21 +33,22 @@
             <li class="nav-item">
               <router-link to="/login"
                 class="nav-link"
-                v-if="true">
+                v-if="!isAuthenticated()">
                 Login
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/login"
+              <router-link to="/"
                 class="nav-link"
-                v-if="false">
+                @click.native="logout()"
+                v-if="isAuthenticated()">
                 Logout
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/register"
                 class="nav-link"
-                v-if="true">
+                v-if="!isAuthenticated()">
                Sign Up
               </router-link>
             </li>
@@ -70,27 +71,37 @@ export default {
     Login,
     SignUp
   },
-  // created() {
-  //   if (isAuthenticated) {
-  //     this.authenticated = true;
-  //   } else {
-  //     this.authenticated = false;
-  //   }
-  // },
-  // created() {
-  //   EventBus.$on('logged', () => {
-  //     this.isLogged = this.isAuthenticated();
-  //   });
-  // },
-  // methods: {
-  //   isAuthenticated() {
-  //     const token = localStorage.getItem('token');
-  //     if (token) {
-  //       return true
-  //     }
-  //     return false;
-  //   }
-  // }
+  data() {
+    return {
+      isLogged: this.isAuthenticated()
+    };
+  },
+  created() {
+    EventBus.$on('logged', () => {
+      this.isLogged = this.isAuthenticated();
+    });
+  },
+  methods: {
+    logout() {
+      const removeToken = localStorage.removeItem('token');
+      console.log(removeToken);
+      if (removeToken) {
+        return true;
+      }
+      return false;
+    },
+    removeToken() {
+      return localStorage.removeItem('token');
+    },
+    isAuthenticated() {
+      EventBus.$emit('isAuthenticated', 'user authenticated');
+      const token = localStorage.getItem('token');
+      if (token) {
+        return true;
+      }
+      return false;
+    }
+  }
 };
 </script>
 

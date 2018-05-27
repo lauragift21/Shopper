@@ -80,22 +80,26 @@ export default {
   methods: {
     loginUser() {
       const url = 'http://localhost:1337/login';
-      axios.post(url, {
-        username: this.username,
-        email: this.email,
-        password: this.password
-      }).then(res => {
-        this.success = true;
-        localStorage.token = res.config.data.email;
-        this.$router.replace(this.$route.query.redirect || '/shop');
-        // passing event with $emit
-        EventBus.$emit('logged', 'user logged');
-      }).catch(err => {
-        this.error = true;
-        console.log(err);
-      });
+      axios
+        .post(url, {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        })
+        .then(res => {
+          this.success = true;
+          localStorage.token = res.data.token;
+          EventBus.$emit('logged', 'user logged');
+          // redirect user if successful
+          this.$router.replace(this.$route.query.redirect || '/shop');
+        })
+        .catch(err => {
+          this.error = true;
+          console.error(err);
+          localStorage.removeItem('token');
+        });
     }
-  },
+  }
 };
 </script>
 
