@@ -25,31 +25,36 @@
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <button class="nav-link btn bg-white" href="#" v-if="isAuthenticated()">
-               <a class="text-dark"> Cart </a>
-               <img src="./assets/cart.png" width="20px" alt="cart">
-              </button>
+                  <!-- TODO: CART TOTAL Indicator -->
+              <a class="text-dark" href="#/cart">
+                <button class="nav-link btn bg-white mx-1  pr-3" href="#" v-if="isAuthenticated()">
+                  <div class="text-dark">
+                    Cart
+                      <img src="./assets/cart.png" width="20px" alt="cart">
+                  </div>
+                </button>
+              </a>
             </li>
             <li class="nav-item">
               <router-link to="/login"
                 class="nav-link"
                 v-if="!isAuthenticated()">
-                Login
+                  Login
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/"
+              <router-link to="/login"
                 class="nav-link"
                 @click.native="logout()"
                 v-if="isAuthenticated()">
-                Logout
+                  Logout
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/register"
                 class="nav-link"
                 v-if="!isAuthenticated()">
-               Sign Up
+                Sign Up
               </router-link>
             </li>
           </ul>
@@ -63,7 +68,7 @@
 <script>
 import Login from '@/components/Login.vue';
 import SignUp from '@/components/SignUp.vue';
-import EventBus from './event-bus';
+import EventBus from './store/event-bus';
 
 export default {
   name: 'home',
@@ -107,8 +112,11 @@ export default {
 
 <style>
 #app {
-  font-family: 'Ubuntu';
+  font-family: 'Raleway', sans-serif;
   font-weight: 300;
+}
+a:hover {
+  text-decoration: none;
 }
 </style>
 
