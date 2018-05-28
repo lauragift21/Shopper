@@ -3,7 +3,8 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Login from './components/Login.vue';
 import SignUp from './components/SignUp.vue';
-import Shop from "./components/Shop.vue";
+import Shop from './components/Shop.vue';
+import Cart from './components/Cart.vue';
 
 Vue.use(Router);
 
@@ -27,17 +28,13 @@ export default new Router({
     {
       path: '/shop',
       name: 'shop',
-      component: Shop,
-      // TODO: make the shop a protected route
-      // beforeEnter: (to, from, next) => {
-      //   // console.log('user is authenticated');
-      //   next('/login')
-      // }
+      component: Shop
+      // beforeEnter: (to, from, next) => {}
     },
     {
       path: '/cart',
       name: 'cart',
-      // component: 'Cart'
+      component: Cart
     }
   ]
 });

@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     reference() {
-      let text = 'Checkout';
+      let text = 'Shopper';
       let possible =
         'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
       for (let i = 0; i < 10; i++)

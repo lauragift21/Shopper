@@ -2,14 +2,14 @@
   <div class="login">
     <h2 class="text-center text-info">Log In</h2>
      <form method="post" @submit.prevent="loginUser">
-      <!-- <div class="alert alert-success alert-dismissible fade show" v-if="success">
+      <div class="alert alert-success alert-dismissible fade show" v-if="success">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <b>Login successful!</b>
       </div>
       <div class="alert alert-danger alert-dismissible fade show" v-if="error">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <b>Login Failed! Please Provide correct credentials</b>
-      </div> -->
+      </div>
       <div class="form-group">
         <label for="Username"> Username: </label>
         <input
