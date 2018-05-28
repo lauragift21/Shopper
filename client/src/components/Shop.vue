@@ -4,16 +4,18 @@
     <div class="card-columns m-5">
       <div class="card p-3" v-for="product in products" :key="product.id">
           <div class="card-img-top">
-            <img :src="product.image" alt="image" width="70%">
+            <img :src="product.image" alt="image" width="300vw">
           </div>
           <div class="card-body card-text text-left">
-            <strong class="text-dark">
+            <strong class="text-dark lead">
               {{ product.name }}
             </strong><br>
-            {{ product.description}}
+            <b>
+              {{ product.description}}
+            </b>
           </div>
-          <h5 class="text-small float-right">{{ product.price | usdollar }}</h5>
-          <button class="btn float-left" @click="addToCart(product)">Add Item </button>
+          <h5 class="text-small mr-3 float-right">{{ product.price | currency }}</h5>
+          <button class="btn ml-3 float-left" @click="addToCart(product)">Add Item </button>
       </div>
     </div>
   </div>
@@ -34,8 +36,8 @@ export default {
     }
   },
   filters: {
-    usdollar: function(value) {
-      return `$${value}`;
+    currency: function(value) {
+      return '‎₦' + parseFloat(value);
     }
   }
 };

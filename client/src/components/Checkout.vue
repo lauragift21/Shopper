@@ -3,7 +3,7 @@
         <p class="App-intro">
             <paystack
                 text="Checkout"
-                :amount="amount"
+                :amount="amount * 100"
                 :email="email"
                 :paystackkey="paystackkey"
                 :reference="reference"
@@ -17,17 +17,18 @@
 
 <script type="text/javascript">
 import paystack from 'vue-paystack';
+
 export default {
   components: {
     paystack
   },
-  props: 'text',
+  props: ['text', 'amount'],
   data() {
     return {
       paystackBtnText: 'Pay Me, My Money',
       paystackkey: 'pk_test_d892921a7336ec2dd11194ab80ec4b5d498a9e2a',
-      email: 'admin@mail.com',
-      amount: 1000000
+      email: 'admin@mail.com'
+      // amount: 1000000
     };
   },
   computed: {

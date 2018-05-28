@@ -14,8 +14,9 @@
           <tr v-for="item in detail" :key="item.id">
             <td>{{ item.details.name }}</td>
             <td> {{ item.details.quantity }}</td>
-            <td> {{ item.details.price | usdollar }}</td>
+            <td> ‎₦{{ item.details.price  }}</td>
             <td>
+              <!-- TODO: Fix remove and add to cart -->
               <button class="btn btn-dark mr-0 mx-0" @click="addToCart(details)">
                 <i class="fa fa-plus-circle"></i>
               </button>
@@ -27,8 +28,8 @@
         </tbody>
       </table>
       <div class="d-flex flex-column align-items-end">
-        <p class="text-center">Total Cost: {{ totalCost | usdollar }}</p>
-        <checkout/>
+        <p class="text-center">Total Cost: {{ totalCost | currency }}</p>
+        <checkout :amount="total"/>
       </div>
     </div>
     <div v-else class="text-center badge-danger">
@@ -48,7 +49,8 @@ export default {
   components: { Checkout },
   data() {
     return {
-      detail: Store.$data.cart
+      detail: Store.$data.cart,
+      total: Store.totalCost
     };
   },
   computed: {
@@ -60,8 +62,8 @@ export default {
     }
   },
   filters: {
-    usdollar: function(value) {
-      return `$${value}`;
+    currency: function(value) {
+      return '‎₦' + parseFloat(value).toFixed(2);
     }
   },
   methods: {

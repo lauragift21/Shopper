@@ -119,6 +119,7 @@ export default {
 #app {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
+  box-sizing: border-box;
 }
 a:hover {
   text-decoration: none;
