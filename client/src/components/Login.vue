@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     loginUser() {
-      const url = 'http://localhost:1337/api/v1/login';
+      const url = 'https://shopper-api.herokuapp.com/api/v1/login';
       axios
         .post(url, {
           username: this.username,

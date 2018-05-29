@@ -13,16 +13,21 @@
     "connect-mongo": "2.0.1",
     "grunt": "1.0.1",
     "jsonwebtoken": "8.2.1",
+    "nexmo": "2.2.1",
     "passport": "0.4.0",
     "passport-jwt": "4.0.0",
     "passport-jwt-strategy": "1.1.4",
     "passport-local": "1.0.0",
     "passport-strategy": "1.0.0",
     "sails": "1.0.2",
+    "sails-hook-email": "0.12.1",
     "sails-hook-grunt": "^3.0.2",
     "sails-hook-orm": "2.0.1",
     "sails-hook-sockets": "^1.4.0",
-    "sails-mongo": "1.0.1"
+    "sails-mongo": "1.0.1",
+    "sails-service-mailer": "3.2.1",
+    "sails-service-sms": "3.1.1",
+    "twilio": "3.17.1"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3"

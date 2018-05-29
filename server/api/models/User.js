@@ -8,15 +8,13 @@
 const bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
-
   attributes: {
-
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
     username: {
       type: 'string',
-      required: true,
+      required: true
     },
     email: {
       type: 'string',
@@ -24,26 +22,27 @@ module.exports = {
       isEmail: true
     },
     password: {
-      type:'string',
+      type: 'string',
       required: true
+    },
+    phone: {
+      type: 'string'
     }
   },
 
   customToJSON: function() {
     // Return a shallow copy of this record with the password removed.
-    return _.omit(this, ['password'])
+    return _.omit(this, ['password']);
   },
 
   // hash password with bcrypt
   beforeCreate: function(user, cb) {
     bcrypt.genSalt(10, function(err, salt) {
       bcrypt.hash(user.password, salt, null, function(err, hash) {
-        if(err) return cb(err);
+        if (err) return cb(err);
         user.password = hash;
         return cb();
-      })
-    })
+      });
+    });
   }
-
 };
-

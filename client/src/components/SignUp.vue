@@ -39,6 +39,23 @@
           </span>
       </div>
       <div class="form-group">
+        <label for="phone"> Phone Number</label>
+        <input
+          type="text"
+          autocomplete="on"
+          class="form-control"
+          v-model="phone"
+          id="phone"
+          name="phone"
+          v-validate="'required'"
+          placeholder="Enter phone number">
+          <span
+            v-show="errors.has('phone')"
+            class="text-danger">
+              {{ errors.first('phone') }}
+          </span>
+      </div>
+      <div class="form-group">
         <label for="password">Password</label>
         <input
           name="password"
@@ -68,18 +85,20 @@ export default {
       username: '',
       email: '',
       password: '',
+      phone: '',
       error: false,
       success: false
     };
   },
   methods: {
     signInUser() {
-      const url = 'http://localhost:1337/api/v1/register';
+      const url = 'https://shopper-api.herokuapp.com/api/v1/register';
       axios
         .post(url, {
           username: this.username,
           email: this.email,
-          password: this.password
+          password: this.password,
+          phone: this.phone
         })
         .then(res => {
           this.success = true;
