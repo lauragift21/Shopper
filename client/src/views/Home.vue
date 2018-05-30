@@ -13,33 +13,37 @@
       <div class="card-columns">
         <div class="card">
           <div class="card-body">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Adipisci molestiae alias laborum eligendi
-              necessitatibus tempora culpa at fuga quas libero? Animi vel a
-              ccusantium quos iste, quia exercitationem t
-              enetur fuga laudantium!
-            </p>
+            <div class="text-center">
+              <img src="../assets/shop.svg" alt="shop" width="200px">
+              <h4 class="mt-3">Shop Discounted Items</h4>
+              <p class="text-center mt-1">
+                Browse through items available int he store and pick the one you like best.
+              </p>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="card-body d-flex justify-content-center">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
-              officia ducimus facilis libero eius, alias
-              consequatur quas saepe quisquam fuga tenetur obcaecati impedit
-               rerum labore distinctio. Soluta natus laborum perferendis.
-            </p>
+          <div class="card-body">
+            <div class="text-center">
+              <img src="../assets/cart.svg" alt="shop" width="200px">
+              <h4>Add to Cart</h4>
+              <p class="text-center mt-1">
+                Add products to cart without stress.
+                Change your mind? You easily switch items in your cart.
+              </p>
+            </div>
+
           </div>
         </div>
         <div class="card">
-          <div class="card-body d-flex justify-content-center">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-               Non, natus. Eligendi ad, ex magni pra
-              aliquid placeat nostrum exercitationem, ab modi nobis aliquam perferend
-              is eveniet, reprehenderit earum consequatur at. Maxime!
-            </p>
+          <div class="card-body">
+            <div class="text-center">
+              <img src="../assets/card.svg" alt="shop" width="200px">
+              <h4>Make Payment</h4>
+              <p class="text-center mt-1">
+                Pay for product with your credit card we accept all kind of payment.
+              </p>
+            </div>
           </div>
         </div>
       </div>

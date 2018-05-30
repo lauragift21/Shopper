@@ -3,7 +3,7 @@
     <div class="bar">
       <nav class="navbar navbar-expand-sm navbar-dark bg-info">
       <a class="navbar-brand" href="#">
-        <img src="./assets/logo.png" alt="logo" height="50px">
+        <img src="./assets/logo.png" alt="logo" height="40px">
       </a>
         <button class="navbar-toggler"
           type="button"
