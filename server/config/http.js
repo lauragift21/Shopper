@@ -10,24 +10,22 @@
  */
 
 module.exports.http = {
-
   /****************************************************************************
-  *                                                                           *
-  * Sails/Express middleware to run for every HTTP request.                   *
-  * (Only applies to HTTP requests -- not virtual WebSocket requests.)        *
-  *                                                                           *
-  * https://sailsjs.com/documentation/concepts/middleware                     *
-  *                                                                           *
-  ****************************************************************************/
+   *                                                                           *
+   * Sails/Express middleware to run for every HTTP request.                   *
+   * (Only applies to HTTP requests -- not virtual WebSocket requests.)        *
+   *                                                                           *
+   * https://sailsjs.com/documentation/concepts/middleware                     *
+   *                                                                           *
+   ****************************************************************************/
 
   middleware: {
-
     /***************************************************************************
-    *                                                                          *
-    * The order in which middleware should be run for HTTP requests.           *
-    * (This Sails app's routes are handled by the "router" middleware below.)  *
-    *                                                                          *
-    ***************************************************************************/
+     *                                                                          *
+     * The order in which middleware should be run for HTTP requests.           *
+     * (This Sails app's routes are handled by the "router" middleware below.)  *
+     *                                                                          *
+     ***************************************************************************/
 
     order: [
       'cookieParser',
@@ -39,17 +37,16 @@ module.exports.http = {
       'poweredBy',
       'router',
       'www',
-      'favicon',
+      'favicon'
     ],
 
-
     /***************************************************************************
-    *                                                                          *
-    * The body parser that will handle incoming multipart HTTP requests.       *
-    *                                                                          *
-    * https://sailsjs.com/config/http#?customizing-the-body-parser             *
-    *                                                                          *
-    ***************************************************************************/
+     *                                                                          *
+     * The body parser that will handle incoming multipart HTTP requests.       *
+     *                                                                          *
+     * https://sailsjs.com/config/http#?customizing-the-body-parser             *
+     *                                                                          *
+     ***************************************************************************/
 
     // bodyParser: (function _configureBodyParser(){
     //   var skipper = require('skipper');
@@ -57,13 +54,12 @@ module.exports.http = {
     //   return middlewareFn;
     // })(),
 
-    passportInit: (function (){
+    passportInit: (function() {
       return require('passport').initialize();
     })(),
 
-    passportSession: (function (){
+    passportSession: (function() {
       return require('passport').session();
     })()
-  },
-
+  }
 };

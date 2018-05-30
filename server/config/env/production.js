@@ -134,7 +134,7 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     cors: {
-      allowOrigins: ['https://shopper-api.herokuapp.com']
+      allowOrigins: '*'
     }
   },
 
