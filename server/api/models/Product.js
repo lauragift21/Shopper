@@ -15,7 +15,8 @@ module.exports = {
       required: true
     },
     description: {
-      type: 'string'
+      type: 'string',
+      required: true
     },
     price: {
       type: 'number',
@@ -23,13 +24,9 @@ module.exports = {
     },
     image: {
       type: 'string'
+    },
+    user: {
+      model: 'user'
     }
-  },
-
-  //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-  //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-  //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-  user: {
-    model: 'user'
   }
 };

@@ -27,6 +27,10 @@ module.exports = {
     },
     phone: {
       type: 'string'
+    },
+    product: {
+      collection: 'product',
+      via: 'user'
     }
   },
 

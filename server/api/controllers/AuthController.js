@@ -20,7 +20,7 @@ module.exports = {
       req.login(user, function(err) {
         if (err) res.send(err);
         sails.log('User ' + user.id + ' has logged in.');
-        const token = jwt.sign(user, 'mysecret');
+        const token = jwToken.sign();
         return res.json([200], {
           message: 'User Login Successful',
           user,

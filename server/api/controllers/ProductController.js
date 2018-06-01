@@ -4,6 +4,8 @@
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
   postProduct: function(req, res) {
@@ -17,22 +19,20 @@ module.exports = {
       .fetch()
       .exec(function(error, product) {
         if (error) return res.serverError(error);
-        sails.log.info('Product created', product);
         if (product)
-          return res.json([200], {
-            message: 'New Product Added',
-            product
-          });
+          return res.status(200).json(product);
       });
-    // MailService.sendMail();
-    // SmsService.sendSMS();
   },
-  getProduct: function(req, res) {
-    Product.find({ name: name, product }).exec(function(error, product) {
-      if (error) return res.send(error);
-      if (product) return res.json(product);
-    });
+
+  getProducts: function(req, res) {
+    Product.find({ sort: 'name ASC' })
+      .populate('user')
+      .exec(function(error, product) {
+        if (error) return res.serverError(error);
+        if (product) return res.status(200).json(product);
+      });
   },
+
   deleteProduct: function(req, res) {
     const id = req.param(id);
     Product.destroy({ id, user }).exec(function(error) {
