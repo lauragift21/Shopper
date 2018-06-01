@@ -20,7 +20,10 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#/shop" v-if="isAuthenticated()">Manage Products</a>
+              <a class="nav-link" href="#/shop" v-if="isAuthenticated()">Shop</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#/product" v-if="isAuthenticated()">Manage Products</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
@@ -91,7 +94,6 @@ export default {
   methods: {
     logout() {
       const removeToken = localStorage.removeItem('token');
-      console.log(removeToken);
       if (removeToken) {
         return true;
       }

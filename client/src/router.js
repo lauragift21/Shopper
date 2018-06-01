@@ -5,6 +5,7 @@ import Login from './components/Login.vue';
 import SignUp from './components/SignUp.vue';
 import Shop from './components/Shop.vue';
 import Cart from './components/Cart.vue';
+import Product from './components/Product.vue';
 
 Vue.use(Router);
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/cart',
       name: 'cart',
       component: Cart
+    },
+    {
+      path: '/product',
+      name: 'product',
+      component: Product
     }
   ]
 });

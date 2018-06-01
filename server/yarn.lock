@@ -100,7 +100,7 @@ acorn@^5.0.0, acorn@^5.5.0:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
-addressparser@0.3.2, addressparser@^0.3.2:
+addressparser@0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/addressparser/-/addressparser-0.3.2.tgz#59873f35e8fcf6c7361c10239261d76e15348bb2"
 
@@ -231,10 +231,6 @@ async@0.2.10, async@0.2.x, async@~0.2.9:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
 
-async@0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-0.9.0.tgz#ac3613b1da9bed1b47510bb4651b8931e47146c7"
-
 async@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/async/-/async-2.0.1.tgz#b709cc0280a9c36f09f4536be823c838a9049e25"
@@ -262,6 +258,20 @@ asynckit@^0.4.0:
 aws-sdk@^2.1.33:
   version "2.247.1"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.247.1.tgz#be5f220d40665ac91d3a84a51f029fa05560c4ee"
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.1.0"
+    xml2js "0.4.17"
+
+aws-sdk@^2.2.36:
+  version "2.248.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.248.1.tgz#a6b65d3a1ef9cdc774b0cf9c552af997d2342c03"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -944,16 +954,6 @@ buildmail@3.0.1:
     nodemailer-fetch "1.0.0"
     nodemailer-shared "1.0.2"
 
-buildmail@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/buildmail/-/buildmail-2.0.0.tgz#f0b7b0a59e9a4a1b5066bbfa051d248f3832eece"
-  dependencies:
-    addressparser "^0.3.2"
-    libbase64 "^0.1.0"
-    libmime "^1.2.0"
-    libqp "^1.1.0"
-    needle "^0.10.0"
-
 builtin-modules@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
@@ -1092,10 +1092,6 @@ cli-width@^2.0.0:
 clone@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
-
-clone@^1.0.2:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
 
 co@^4.6.0:
   version "4.6.0"
@@ -1331,7 +1327,7 @@ dateformat@~1.0.12:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
-debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.2.0, debug@^2.6.8, debug@^2.6.9, debug@~2.6.4, debug@~2.6.6, debug@~2.6.8:
+debug@2.6.9, debug@^2.1.1, debug@^2.2.0, debug@^2.6.8, debug@^2.6.9, debug@~2.6.4, debug@~2.6.6, debug@~2.6.8:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -1448,10 +1444,6 @@ ee-first@1.1.1:
 ejs@2.5.7:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.7.tgz#cc872c168880ae3c7189762fd5ffc00896c9518a"
-
-ejs@^2.3.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
 
 electron-to-chromium@^1.3.30:
   version "1.3.47"
@@ -2177,19 +2169,6 @@ hosted-git-info@^2.1.4:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
 
-html-to-text@^1.3.1:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/html-to-text/-/html-to-text-1.6.2.tgz#ab97c6a6244f8cb099ff3ed9d9e359a85f2ceef8"
-  dependencies:
-    htmlparser "1.x.x"
-    optimist "0.x.x"
-    underscore "1.x.x"
-    underscore.string "2.x.x"
-
-htmlparser@1.x.x:
-  version "1.7.7"
-  resolved "https://registry.yarnpkg.com/htmlparser/-/htmlparser-1.7.7.tgz#19e7b3997ff6fbac99ae5a7d2766489efe7e2d0e"
-
 http-errors@1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.2.tgz#0a002cc85707192a7e7946ceedc11155f60ec736"
@@ -2261,7 +2240,7 @@ iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
-iconv-lite@^0.4.13, iconv-lite@^0.4.17, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@^0.4.17, iconv-lite@~0.4.13:
   version "0.4.23"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.23.tgz#297871f63be507adcfbfca715d0cd0eed84e9a63"
   dependencies:
@@ -2527,7 +2506,7 @@ jsonwebtoken@5.4.x:
     jws "^3.0.0"
     ms "^0.7.1"
 
-jsonwebtoken@8.2.1, jsonwebtoken@^8.1.0, jsonwebtoken@^8.2.0, jsonwebtoken@^8.2.1:
+jsonwebtoken@8.2.1, jsonwebtoken@^8.1.0, jsonwebtoken@^8.2.0:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.2.1.tgz#333ee39aa8f238f32fa41693e7a2fb7e42f82b31"
   dependencies:
@@ -2600,7 +2579,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libbase64@0.1.0, libbase64@^0.1.0:
+libbase64@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/libbase64/-/libbase64-0.1.0.tgz#62351a839563ac5ff5bd26f12f60e9830bb751e6"
 
@@ -2612,15 +2591,7 @@ libmime@2.0.0:
     libbase64 "0.1.0"
     libqp "1.1.0"
 
-libmime@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/libmime/-/libmime-1.2.0.tgz#8d84b4f3b225b3704410236ef494906436ba742b"
-  dependencies:
-    iconv-lite "^0.4.13"
-    libbase64 "^0.1.0"
-    libqp "^1.1.0"
-
-libqp@1.1.0, libqp@^1.1.0:
+libqp@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/libqp/-/libqp-1.1.0.tgz#f5e6e06ad74b794fb5b5b66988bf728ef1dedbe8"
 
@@ -2705,10 +2676,6 @@ lodash.once@^4.0.0:
 lodash@3.10.1, "lodash@^3.0.1 || ^2.0.0", lodash@^3.10.1, lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
-
-lodash@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.2.0.tgz#4bf50a3243f9aeb0bac41a55d3d5990675a462fb"
 
 lodash@3.8.0:
   version "3.8.0"
@@ -2891,13 +2858,6 @@ mailcomposer@3.0.1:
     buildmail "3.0.1"
     libmime "2.0.0"
 
-mailcomposer@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/mailcomposer/-/mailcomposer-2.1.0.tgz#a6531822899614fee899c92226d81e2b9cbb183d"
-  dependencies:
-    buildmail "^2.0.0"
-    libmime "^1.2.0"
-
 makeerror@1.0.x:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
@@ -3004,7 +2964,7 @@ mimic-fn@^1.0.0:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimist@0.0.10, minimist@~0.0.1, minimist@~0.0.7:
+minimist@0.0.10, minimist@~0.0.7:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
@@ -3100,31 +3060,9 @@ nedb@1.8.0:
     mkdirp "~0.5.1"
     underscore "~1.4.4"
 
-needle@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-0.10.0.tgz#16a24d63f2a61152eb74cce1d12af85c507577d4"
-  dependencies:
-    debug "^2.1.2"
-    iconv-lite "^0.4.4"
-
-needle@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-0.11.0.tgz#02a71b008eaf7d55ae89fb9fd7685b7b88d7bc29"
-  dependencies:
-    debug "^2.1.2"
-    iconv-lite "^0.4.4"
-
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
-
-nexmo@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/nexmo/-/nexmo-2.2.1.tgz#cbea43697f30af51a895db34ae90f1e0e1291f28"
-  dependencies:
-    jsonwebtoken "^8.2.1"
-    request "^2.83.0"
-    uuid "^2.0.2"
 
 node-uuid@~1.4.0:
   version "1.4.8"
@@ -3144,12 +3082,6 @@ nodemailer-direct-transport@2.0.1:
     nodemailer-shared "1.0.3"
     smtp-connection "2.0.1"
 
-nodemailer-direct-transport@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/nodemailer-direct-transport/-/nodemailer-direct-transport-1.1.0.tgz#a2f78708ee6f16ea0573fc82949d138ff172f624"
-  dependencies:
-    smtp-connection "^1.3.1"
-
 nodemailer-fetch@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/nodemailer-fetch/-/nodemailer-fetch-1.0.0.tgz#e448ea1a0260d03a66ffa9c634c48b8bc2d2710f"
@@ -3157,12 +3089,6 @@ nodemailer-fetch@1.0.0:
 nodemailer-fetch@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/nodemailer-fetch/-/nodemailer-fetch-1.2.1.tgz#efc18cec205b4ff051d205873d79064ad18509e3"
-
-nodemailer-html-to-text@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/nodemailer-html-to-text/-/nodemailer-html-to-text-1.0.2.tgz#81dd618860ca60a2b15d4b7a67debdb78a47f253"
-  dependencies:
-    html-to-text "^1.3.1"
 
 nodemailer-sendgrid-transport@0.2.0:
   version "0.2.0"
@@ -3179,6 +3105,12 @@ nodemailer-ses-transport@1.3.0:
   resolved "https://registry.yarnpkg.com/nodemailer-ses-transport/-/nodemailer-ses-transport-1.3.0.tgz#215efe3513f906c1fd2ed1d01d1a518c9ed5d21a"
   dependencies:
     aws-sdk "^2.1.33"
+
+nodemailer-ses-transport@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/nodemailer-ses-transport/-/nodemailer-ses-transport-1.5.1.tgz#dc0598c1bf53e8652e632e8f31692ce022d7dea9"
+  dependencies:
+    aws-sdk "^2.2.36"
 
 nodemailer-shared@1.0.2:
   version "1.0.2"
@@ -3201,14 +3133,6 @@ nodemailer-smtp-pool@2.0.0:
     nodemailer-wellknown "0.1.7"
     smtp-connection "2.0.0"
 
-nodemailer-smtp-pool@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/nodemailer-smtp-pool/-/nodemailer-smtp-pool-1.2.0.tgz#3d6af2a92780449ad83e53f301a18c07d3a114d1"
-  dependencies:
-    clone "^1.0.2"
-    nodemailer-wellknown "^0.1.7"
-    smtp-connection "^1.3.7"
-
 nodemailer-smtp-transport@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/nodemailer-smtp-transport/-/nodemailer-smtp-transport-2.0.0.tgz#64d4a782a64b391031df81483d5088f0f24f34bc"
@@ -3227,14 +3151,6 @@ nodemailer-smtp-transport@2.0.1:
     nodemailer-wellknown "0.1.7"
     smtp-connection "2.0.1"
 
-nodemailer-smtp-transport@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/nodemailer-smtp-transport/-/nodemailer-smtp-transport-1.1.0.tgz#e6c37f31885ab3080e7ded3cf528c4ad7e691398"
-  dependencies:
-    clone "^1.0.2"
-    nodemailer-wellknown "^0.1.7"
-    smtp-connection "^1.3.7"
-
 nodemailer-stub-transport@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/nodemailer-stub-transport/-/nodemailer-stub-transport-1.0.0.tgz#abd30ddb9f65e4479679a034e067fede277119ac"
@@ -3242,10 +3158,6 @@ nodemailer-stub-transport@1.0.0:
 nodemailer-wellknown@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/nodemailer-wellknown/-/nodemailer-wellknown-0.1.7.tgz#aa641990a99fa80a9da8a23562905477cceee55f"
-
-nodemailer-wellknown@^0.1.7:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/nodemailer-wellknown/-/nodemailer-wellknown-0.1.10.tgz#586db8101db30cb4438eb546737a41aad0cf13d5"
 
 nodemailer@2.0.0:
   version "2.0.0"
@@ -3258,15 +3170,9 @@ nodemailer@2.0.0:
     nodemailer-smtp-pool "2.0.0"
     nodemailer-smtp-transport "2.0.0"
 
-nodemailer@^1.3.4:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-1.11.0.tgz#4e69cb39b03015b1d1ef0c78a815412b9e976f79"
-  dependencies:
-    libmime "^1.2.0"
-    mailcomposer "^2.1.0"
-    needle "^0.11.0"
-    nodemailer-direct-transport "^1.1.0"
-    nodemailer-smtp-transport "^1.1.0"
+nodemailer@4.6.5:
+  version "4.6.5"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.6.5.tgz#306ce18c4543f3f06e5f76665d3cb6277f872f53"
 
 nopt@~3.0.6:
   version "3.0.6"
@@ -3344,13 +3250,6 @@ onetime@^2.0.0:
 open@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/open/-/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
-
-optimist@0.x.x:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
-  dependencies:
-    minimist "~0.0.1"
-    wordwrap "~0.0.2"
 
 optionator@^0.8.2:
   version "0.8.2"
@@ -3859,7 +3758,7 @@ request@2.55.x:
     tough-cookie ">=0.12.0"
     tunnel-agent "~0.4.0"
 
-request@^2.51.0, request@^2.60.0, request@^2.83.0, request@^2.87.0:
+request@^2.51.0, request@^2.60.0, request@^2.87.0:
   version "2.87.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.87.0.tgz#32f00235cd08d482b4d0d68db93a829c0ed5756e"
   dependencies:
@@ -4027,17 +3926,6 @@ sails-generate@^1.15.19:
     read "1.0.7"
     reportback "^2.0.1"
     sails.io.js-dist "^1.0.0"
-
-sails-hook-email@0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/sails-hook-email/-/sails-hook-email-0.12.1.tgz#3a52f0ebd54dd4504f44e971e198130010557883"
-  dependencies:
-    async "0.9.0"
-    ejs "^2.3.1"
-    lodash "3.2.0"
-    nodemailer "^1.3.4"
-    nodemailer-html-to-text "^1.0.1"
-    nodemailer-smtp-pool "^1.1.1"
 
 sails-hook-grunt@^3.0.2:
   version "3.1.0"
@@ -4326,10 +4214,6 @@ smtp-connection@2.0.1:
   resolved "https://registry.yarnpkg.com/smtp-connection/-/smtp-connection-2.0.1.tgz#e6928fe3866b436a7c607b591dae99d9a0745981"
   dependencies:
     nodemailer-shared "1.0.3"
-
-smtp-connection@^1.3.1, smtp-connection@^1.3.7:
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/smtp-connection/-/smtp-connection-1.3.8.tgz#55832c2160cfb3086e1dcd87fd1c19fa61b7f536"
 
 smtpapi@^1.2.0:
   version "1.3.1"
@@ -4727,15 +4611,11 @@ ultron@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ultron/-/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
 
-underscore.string@2.x.x:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-2.4.0.tgz#8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b"
-
 underscore.string@~3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-3.2.3.tgz#806992633665d5e5fcb4db1fb3a862eb68e9e6da"
 
-underscore@1.x, underscore@1.x.x:
+underscore@1.x:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.0.tgz#31dbb314cfcc88f169cd3692d9149d81a00a73e4"
 
@@ -4796,10 +4676,6 @@ uuid@3.0.1:
 uuid@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
-
-uuid@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
 uuid@^3.1.0:
   version "3.2.1"
@@ -4929,10 +4805,6 @@ winston@0.8.x:
 wordwrap@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
-
-wordwrap@~0.0.2:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
 wordwrap@~1.0.0:
   version "1.0.0"

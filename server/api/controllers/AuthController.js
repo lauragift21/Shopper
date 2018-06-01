@@ -48,15 +48,13 @@ module.exports = {
     User.create(data)
       .fetch()
       .exec(function(err, user) {
-        if (err) return res.send(user);
+        if (err) return res.serverError(user);
         req.login(user, function(err) {
           if (err) return res.send(user);
-          nexmo.message.sendSms(from, to, text);
           sails.log('User ' + user.id + ' has been registered successfully.');
           return res.json([200], {
             message: 'New User Registration Successful'
           });
-          // return res.redirect('/');
         });
       });
   }

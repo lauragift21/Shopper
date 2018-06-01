@@ -41,8 +41,11 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
-  'post /api/v1/login': 'AuthController.login',
-  'post /api/v1/register': 'AuthController.register',
+  'POST /api/v1/login': 'AuthController.login',
+  'POST /api/v1/register': 'AuthController.register',
+  'POST /api/v1/products': 'ProductController.postProduct',
+  'GET /api/v1/products': 'ProductController.getProducts',
+  'DELETE /api/v1/products': 'ProductController.deleteProduct',
   '/logout': 'AuthController.logout'
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗

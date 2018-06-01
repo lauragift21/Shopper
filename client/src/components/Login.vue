@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     loginUser() {
-      const url = 'https://shopper-api.herokuapp.com/api/v1/login';
+      const url = 'http://localhost:1337/api/v1/login';
       axios
         .post(url, {
           username: this.username,
@@ -96,7 +96,7 @@ export default {
         .catch(err => {
           this.error = true;
           console.error(err);
-          localStorage.removeItem('token');
+          // localStorage.removeItem('token');
         });
     }
   }
