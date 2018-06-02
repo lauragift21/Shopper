@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
   // create a new product
-  postProduct: function(req, res) {
+  createProduct: function(req, res) {
     data = {
       name: req.body.name,
       description: req.body.description,
@@ -36,17 +36,16 @@ module.exports = {
 
   // delete a product
   deleteProduct: function(req, res) {
-    const id = req.param(name);
-    Product.destroy({ id, user }).exec(function(error) {
+    Product.destroy({ id: req.params.id }).exec(function(error, product) {
       if (error) return res.serverError(error);
-      sails.log('Product removed', product);
+      sails.log('Product removed');
       return res.ok();
     });
   },
 
   // send mail and sms on add to cart action
   addToCart: function(req, res) {
-    MailService.sendMail();
-    SmsService.sendSms();
+    // MailService.sendMail();
+    // SmsService.sendSms();
   }
 };

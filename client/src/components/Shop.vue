@@ -46,13 +46,14 @@ export default {
       items: Store.$data.items
     };
   },
-  beforeRouteEnter(to, from, next) {
-    if (true) {
-      next();
-    } else {
-      next('/');
-    }
-  },
+  // eslint-disable-next-line
+  // beforeRouteEnter(to, from, next) {
+  //   if (true) {
+  //     next();
+  //   } else {
+  //     next('/');
+  //   }
+  // },
   methods: {
     addToCart(product) {
       Store.addToCart(product);

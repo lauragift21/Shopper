@@ -11,6 +11,10 @@
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <form class="w-75 my-4 mx-4" @submit.prevent="postProduct">
+          <div class="alert alert-success alert-dismissible fade show" v-if="success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <b>Product Added successfully!</b>
+          </div>
           <div class="row">
             <div class="col-4">
               <div class="form-group">
@@ -78,7 +82,9 @@
               <td class="text-sm-10"><h6>{{product.description}}</h6></td>
               <td>₦{{product.price}}</td>
               <td>
-                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <button type="submit" class="btn btn-danger" @click="deleteProduct(product, product.id)">
+                  <i class="fa fa-trash"></i>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -98,13 +104,14 @@ export default {
       description: '',
       price: '',
       image: '',
-      products: []
+      products: [],
+      success: false
     };
   },
   methods: {
     postProduct() {
-      const url = 'http://localhost:1337/api/v1/products';
-      const AUTH = {
+      const url = 'http://localhost:1337/api/v1/product';
+      const auth = {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'
@@ -119,13 +126,32 @@ export default {
             price: this.price,
             image: this.image
           },
-          AUTH
+          auth
         )
         .then(res => {
-          console.dir(res);
+          console.log(res);
+          this.success = true;
         })
         .catch(err => {
           console.error(err);
+        });
+    },
+    deleteProduct(products, id) {
+      const url = 'http://localhost:1337/api/v1/product/';
+      const auth = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json'
+        }
+      };
+      axios
+        .delete(url + id, auth)
+        .then(res => {
+          this.products.splice(id, 1);
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
         });
     }
   },

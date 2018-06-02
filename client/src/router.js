@@ -30,7 +30,6 @@ export default new Router({
       path: '/shop',
       name: 'shop',
       component: Shop
-      // beforeEnter: (to, from, next) => {}
     },
     {
       path: '/cart',
