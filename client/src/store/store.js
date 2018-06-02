@@ -1,10 +1,12 @@
 import Vue from 'vue';
+import axios from 'axios';
 import products from '../shop';
 export const Store = new Vue({
   data() {
     return {
       products,
-      cart: []
+      cart: [],
+      items: []
     };
   },
   computed: {
@@ -13,6 +15,21 @@ export const Store = new Vue({
         return accum + product.details.price * product.quantity;
       }, 0);
     }
+  },
+  beforeCreate() {
+    const url = 'http://localhost:1337/api/v1/products';
+    const auth = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      }
+    };
+    axios
+      .get(url, auth)
+      .then(res => {
+        this.items = res.data;
+      })
+      .catch(err => {});
   },
   methods: {
     addToCart(product) {

@@ -63,18 +63,23 @@
         id="nav-profile"
         role="tabpanel"
         aria-labelledby="nav-profile-tab">
-        <table class="table">
+        <table class="table table-responsive table-striped">
           <thead>
             <tr>
-              <th>Product Name</th>
-              <th>Description</th>
-              <th>Price</th>
+              <th class="text-center">Product</th>
+              <th class="text-center">Description</th>
+              <th class="text-center">Price</th>
+              <th class="text-center"><i class="fa fa-edit"></i></th>
             </tr>
           </thead>
           <tbody>
-            {{products}}
             <tr v-for="product in products" :key="product.id">
-              <td>{{products}}</td>
+              <td>{{product.name}}</td>
+              <td class="text-sm-10"><h6>{{product.description}}</h6></td>
+              <td>₦{{product.price}}</td>
+              <td>
+                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -122,20 +127,25 @@ export default {
         .catch(err => {
           console.error(err);
         });
-    },
-    getProduct() {
-      const url = 'http://localhost:1337/api/v1/products';
-      axios
-        .get(url)
-        .then(response => {
-          this.products = response.data.data;
-          console.log(this.products);
-        })
-        .catch(error => {
-          console.log(this.products);
-          console.log(error);
-        });
     }
+  },
+  mounted() {
+    const url = 'http://localhost:1337/api/v1/products';
+    const auth = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      }
+    };
+    axios
+      .get(url, auth)
+      .then(res => {
+        this.products = res.data;
+        console.log(this.products);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>

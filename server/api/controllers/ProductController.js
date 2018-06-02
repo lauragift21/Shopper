@@ -8,6 +8,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 module.exports = {
+  // create a new product
   postProduct: function(req, res) {
     data = {
       name: req.body.name,
@@ -19,11 +20,11 @@ module.exports = {
       .fetch()
       .exec(function(error, product) {
         if (error) return res.serverError(error);
-        if (product)
-          return res.status(200).json(product);
+        if (product) return res.status(200).json(product);
       });
   },
 
+  // get list of all products
   getProducts: function(req, res) {
     Product.find({ sort: 'name ASC' })
       .populate('user')
@@ -33,12 +34,19 @@ module.exports = {
       });
   },
 
+  // delete a product
   deleteProduct: function(req, res) {
-    const id = req.param(id);
+    const id = req.param(name);
     Product.destroy({ id, user }).exec(function(error) {
       if (error) return res.serverError(error);
       sails.log('Product removed', product);
       return res.ok();
     });
+  },
+
+  // send mail and sms on add to cart action
+  addToCart: function(req, res) {
+    MailService.sendMail();
+    SmsService.sendSms();
   }
 };

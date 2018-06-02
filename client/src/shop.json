@@ -30,7 +30,7 @@
     "quantity": 1,
     "sku": 3,
     "image":
-      "http://res.cloudinary.com/lauragift/image/upload/w_400,h_250/v1527180610/91-UbBc5c9L._UX395__bumodh.jpg"
+      "http://res.cloudinary.com/lauragift/image/upload/w_400,h_250/v1527180610/Borough_-_75_-_Yull-_blue_1024x_dllbkk"
   },
   {
     "id": "4",
@@ -41,28 +41,28 @@
     "quantity": 1,
     "sku": 4,
     "image":
-      "http://res.cloudinary.com/lauragift/image/upload/w_400,h_300/v1527492625/images_oyzwtr.jpg"
+      "http://res.cloudinary.com/lauragift/image/upload/w_400,h_300/v1527492625/Borough_-_75_-_Yull-_blue_1024x_dllbkk"
   },
   {
     "id": "5",
-    "name": "Leather BekinStock",
+    "name": "Micheal Kors Bag",
     "description":
       "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": 4650,
+    "price": 4500,
     "quantity": 1,
-    "sku": 5,
+    "sku": 1,
     "image":
-      "http://res.cloudinary.com/lauragift/image/upload/w_400/v1527493453/ej7qzwjk7pw0a3nt0q38.jpg"
+      "http://res.cloudinary.com/lauragift/image/upload/w_400/v1527180596/81Teq12zAYL._UX395__y4wshb.jpg"
   },
   {
     "id": "6",
-    "name": "LV Jacket",
+    "name": "BeckinStock",
     "description":
       "Lorem ips um dolor sit amet, consectetur adipiscing elit, sed do eiusmodn volup",
-    "price": 1450,
+    "price": 1350,
     "quantity": 1,
-    "sku": 6,
+    "sku": 2,
     "image":
-      "http://res.cloudinary.com/lauragift/image/upload/w_400,h_400/v1527492529/IMG_E3218_grande_arxh7q.jpg"
+      "http://res.cloudinary.com/lauragift/image/upload/w_400/v1527492652/images_x6du32.jpg"
   }
 ]
