@@ -3,13 +3,13 @@
     <div class="card-header">
       <nav class="mt-2">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-create" aria-selected="true">Create Product</a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-view" aria-selected="false">View Products</a>
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-create" role="tab" aria-controls="nav-create" aria-selected="true">Create Product</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-view" role="tab" aria-controls="nav-view" aria-selected="false">View Products</a>
       </div>
     </nav>
     </div>
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane fade show active" id="nav-create" role="tabpanel" aria-labelledby="nav-home-tab">
         <form class="w-75 my-4 mx-4" @submit.prevent="postProduct">
           <div class="alert alert-success alert-dismissible fade show" v-if="success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -62,12 +62,8 @@
           </button>
         </form>
       </div>
-      <div
-        class="tab-pane fade"
-        id="nav-profile"
-        role="tabpanel"
-        aria-labelledby="nav-profile-tab">
-        <table class="table table-responsive table-striped">
+      <div class="tab-pane fade" id="nav-view" role="tabpanel" saria-labelledby="nav-profile-tab">
+        <table class="table table-responsive table-striped" v-if="products.length > 0">
           <thead>
             <tr>
               <th class="text-center">Product</th>
@@ -82,13 +78,17 @@
               <td class="text-sm-10"><h6>{{product.description}}</h6></td>
               <td>₦{{product.price}}</td>
               <td>
-                <button type="submit" class="btn btn-danger" @click="deleteProduct(product, product.id)">
+                <button type="submit" class="btn btn-danger" @click.prevent="deleteProduct(product, product.id)">
                   <i class="fa fa-trash"></i>
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
+        <div class="text-center text-danger my-4" v-else>
+          <i class="fa fa-exclamation-triangle"></i>
+          No products available. Go ahead and create one.
+        </div>
       </div>
     </div>
   </div>
@@ -96,6 +96,7 @@
 
 <script>
 import axios from 'axios';
+import { BASE_URL, getHeaders } from '../utils';
 
 export default {
   data() {
@@ -108,44 +109,33 @@ export default {
       success: false
     };
   },
+  created() {
+    this.listProduct();
+  },
   methods: {
     postProduct() {
-      const url = 'http://localhost:1337/api/v1/product';
-      const auth = {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        }
-      };
       axios
         .post(
-          url,
+          `${BASE_URL}/product`,
           {
             name: this.name,
             description: this.description,
             price: this.price,
             image: this.image
           },
-          auth
+          getHeaders
         )
         .then(res => {
-          console.log(res);
           this.success = true;
+          console.log(res);
         })
         .catch(err => {
           console.error(err);
         });
     },
     deleteProduct(products, id) {
-      const url = 'http://localhost:1337/api/v1/product/';
-      const auth = {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        }
-      };
       axios
-        .delete(url + id, auth)
+        .delete(`${BASE_URL}/product/id`, getHeaders)
         .then(res => {
           this.products.splice(id, 1);
           console.log(res);
@@ -153,25 +143,17 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    listProduct() {
+      axios
+        .get(`${BASE_URL}/products`, getHeaders)
+        .then(res => {
+          this.products = res.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
-  },
-  mounted() {
-    const url = 'http://localhost:1337/api/v1/products';
-    const auth = {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json'
-      }
-    };
-    axios
-      .get(url, auth)
-      .then(res => {
-        this.products = res.data;
-        console.log(this.products);
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 };
 </script>

@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import axios from 'axios';
 import products from '../shop';
+import { BASE_URL, getHeaders } from '../utils';
+
 export const Store = new Vue({
   data() {
     return {
@@ -16,23 +18,20 @@ export const Store = new Vue({
       }, 0);
     }
   },
-  beforeCreate() {
-    const url = 'http://localhost:1337/api/v1/products';
-    const auth = {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json'
-      }
-    };
-    axios
-      .get(url, auth)
-      .then(res => {
-        this.items = res.data;
-      })
-      .catch(err => {});
+  mounted() {
+    this.productList();
   },
   methods: {
-    addToCart(product) {
+    productList() {
+      axios
+        .get(`${BASE_URL}/products`, getHeaders)
+        .then(res => {
+          this.items = res.data;
+        })
+        /* eslint-disable */
+        .catch(err => {});
+    },
+    addToCart(product, id) {
       const cartItem = this.cart.findIndex(p => {
         return p.details.id === product.id;
       });

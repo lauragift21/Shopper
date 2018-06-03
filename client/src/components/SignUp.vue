@@ -77,6 +77,7 @@
 
 <script>
 import axios from 'axios';
+import { BASE_URL } from '../utils';
 
 export default {
   name: 'Register',
@@ -92,9 +93,8 @@ export default {
   },
   methods: {
     signInUser() {
-      const url = 'http://localhost:1337/api/v1/register';
       axios
-        .post(url, {
+        .post(`${BASE_URL}/register`, {
           username: this.username,
           email: this.email,
           password: this.password,

@@ -65,6 +65,7 @@
 
 <script>
 import axios from 'axios';
+import { BASE_URL } from '../utils';
 import EventBus from '../store/event-bus';
 
 export default {
@@ -79,9 +80,8 @@ export default {
   },
   methods: {
     loginUser() {
-      const url = 'http://localhost:1337/api/v1/login';
       axios
-        .post(url, {
+        .post(`${BASE_URL}/login`, {
           username: this.username,
           email: this.email,
           password: this.password
@@ -90,13 +90,11 @@ export default {
           this.success = true;
           localStorage.token = res.data.token;
           EventBus.$emit('logged', 'user logged');
-          // redirect user if successful
           this.$router.replace(this.$route.query.redirect || '/shop');
         })
         .catch(err => {
           this.error = true;
           console.error(err);
-          // localStorage.removeItem('token');
         });
     }
   }
