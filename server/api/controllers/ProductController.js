@@ -41,11 +41,5 @@ module.exports = {
       sails.log('Product removed');
       return res.ok();
     });
-  },
-
-  // send mail and sms on add to cart action
-  addToCart: function(req, res) {
-    // MailService.sendMail();
-    // SmsService.sendSms();
   }
 };

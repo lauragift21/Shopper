@@ -31,6 +31,10 @@ module.exports = {
     product: {
       collection: 'product',
       via: 'user'
+    },
+    Cart: {
+      collection: 'cart',
+      via: 'user'
     }
   },
 

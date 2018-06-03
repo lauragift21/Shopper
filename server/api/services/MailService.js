@@ -14,16 +14,17 @@ const transporter = nodemailer.createTransport(
 
 let mailOptions = {
   from: 'shopper@mailinator.com',
-  to: 'c;ear' ,
+  to: 'lauramdidi21@gmail.com',
   subject: 'Congrats! New Product added to Cart',
   html:
     'You have added a new product to your cart. Please visit your Cart to check them out.'
 };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if(error) {
-    console.log(error);
+transporter.sendMail(mailOptions, function(err, res) {
+  if (err) {
+    console.log(err);
   } else {
+    res.send(200);
     console.log('Message sent sucessfully!');
   }
 });
