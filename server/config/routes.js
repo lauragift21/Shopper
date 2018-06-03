@@ -46,7 +46,7 @@ module.exports.routes = {
   'POST /api/v1/product': 'ProductController.createProduct',
   'GET /api/v1/products': 'ProductController.getProducts',
   'DELETE /api/v1/product/:id': 'ProductController.deleteProduct',
-  'POST /api/v1/send': 'CartController.addCart',
+  'GET /api/v1/send': 'CartController.sendMsg',
   '/logout': 'AuthController.logout'
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗

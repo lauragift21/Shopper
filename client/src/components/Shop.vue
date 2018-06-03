@@ -37,7 +37,9 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { Store } from '../store/store';
+import { getHeaders } from '../utils';
 
 export default {
   data() {
@@ -46,17 +48,18 @@ export default {
       items: Store.$data.items
     };
   },
-  // eslint-disable-next-line
-  // beforeRouteEnter(to, from, next) {
-  //   if (true) {
-  //     next();
-  //   } else {
-  //     next('/');
-  //   }
-  // },
   methods: {
     addToCart(product) {
       Store.addToCart(product);
+      // method for sending mail and sms
+      axios
+        .get('http://localhost:1337/api/v1/send', getHeaders)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
       console.log(Store.addToCart());
     }
   },
