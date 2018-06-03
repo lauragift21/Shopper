@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       paystackBtnText: 'Pay Me, My Money',
-      paystackkey: 'pk_test_d892921a7336ec2dd11194ab80ec4b5d498a9e2a',
+      paystackkey: process.env.paystackkey,
       email: 'admin@mail.com'
       // amount: 1000000
     };
