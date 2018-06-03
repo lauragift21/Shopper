@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "0.18.0",
+    "epic-spinners": "1.0.3",
     "eslint": "4.19.1",
     "express": "4.16.3",
     "vee-validate": "2.0.9",

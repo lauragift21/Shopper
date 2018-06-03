@@ -70,13 +70,24 @@
             {{ errors.first('password') }}
           </span>
       </div>
-      <button type="submit" class="btn btn-dark">Submit</button>
+      <button type="submit" class="btn btn-dark">
+        <div class="d-flex">
+          Submit
+          <half-circle-spinner
+            v-if="isloading"
+            :animation-duration="1000"
+            :size="27"
+            :color="'#ffffff'"
+          />
+        </div>
+      </button>
     </form>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import { HalfCircleSpinner } from 'epic-spinners';
 import { BASE_URL } from '../utils';
 
 export default {
@@ -88,11 +99,14 @@ export default {
       password: '',
       phone: '',
       error: false,
-      success: false
+      success: false,
+      isloading: false
     };
   },
+  components: { HalfCircleSpinner },
   methods: {
     signInUser() {
+      this.isloading = true;
       axios
         .post(`${BASE_URL}/register`, {
           username: this.username,
@@ -101,6 +115,7 @@ export default {
           phone: this.phone
         })
         .then(res => {
+          this.isloading = false;
           this.success = true;
           console.log(res);
         })
