@@ -39,7 +39,7 @@
 <script>
 import axios from 'axios';
 import { Store } from '../store/store';
-import { getHeaders } from '../utils';
+import { BASE_URL, getHeaders } from '../utils';
 
 export default {
   data() {
@@ -53,7 +53,7 @@ export default {
       Store.addToCart(product);
       // method for sending mail and sms
       axios
-        .get('http://localhost:1337/api/v1/send', getHeaders)
+        .get(`${BASE_URL}/send`, getHeaders)
         .then(res => {
           console.log(res);
         })
