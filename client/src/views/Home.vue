@@ -17,7 +17,7 @@
               <img src="../assets/shop.svg" alt="shop" width="200px">
               <h4 class="mt-3">Shop Discounted Items</h4>
               <p class="text-center mt-1">
-                Browse through items available int he store and pick the one you like best.
+                Browse through items available in the store and pick the one you like best.
               </p>
             </div>
           </div>
@@ -29,7 +29,7 @@
               <h4>Add to Cart</h4>
               <p class="text-center mt-1">
                 Add products to cart without stress.
-                Change your mind? You easily switch items in your cart.
+                Change your mind? You can easily switch items in your cart.
               </p>
             </div>
 
